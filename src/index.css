@@ -1,0 +1,42 @@
+@import url('https://rsms.me/inter/inter.css');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background: #0A0E13;
+  color: #E8EDF4;
+  overflow: hidden;
+}
+
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'InterVariable', system-ui, sans-serif; }
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #1E2530; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #2A3340; }
+
+.num {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-feature-settings: 'tnum';
+}
+
+.glass {
+  background: rgba(22, 29, 38, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+button { font-family: inherit; }
