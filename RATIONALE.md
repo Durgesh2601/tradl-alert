@@ -138,5 +138,4 @@ Restraint is a green flag in the brief. Specifics:
 ## 7. AI tools used
 
 Claude Code helped with scaffolding component shells and the
-Lightweight-Charts boilerplate. The architecture, the alert model, the NLU
-pattern set, the fire-animation choreography, and what to cut are mine.
+Lightweight-Charts boilerplate.
