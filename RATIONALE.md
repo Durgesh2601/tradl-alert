@@ -1,4 +1,4 @@
-# Rationale — Chart Alive
+# Rationale — TRADL-alert
 
 **Brief:** TRADL AI — conversational AI alerts, visualized on the chart.
 
@@ -11,11 +11,11 @@ I picked two users and let most decisions resolve against the first.
 **Priya, 32 — Bengaluru, salaried, option seller on weekly expiries.**
 Can't watch the screen 9:15–3:30. Has been burned twice by one leg of a
 strangle blowing out while she was in a meeting. Speaks alerts in precise
-English: *"Alert me when NIFTY breaks 24,500."*
+English: _"Alert me when NIFTY breaks 24,500."_
 
 **Rohit, 24 — equity beginner, Hinglish vocabulary.**
 ₹2L portfolio. Doesn't yet know what's worth alerting on. Types things like
-*"reliance upar jaye toh batao"*.
+_"reliance upar jaye toh batao"_.
 
 Most of the chart-side polish is for Priya. The chat tolerance and the
 suggestion layer are for Rohit.
@@ -27,7 +27,7 @@ suggestion layer are for Rohit.
 Three surfaces in one workspace, not three apps. Left: chat. Centre: chart.
 Right: suggestions. On mobile they collapse to tabs.
 
-**One workspace** because the unit of work *is* the alert, and an alert
+**One workspace** because the unit of work _is_ the alert, and an alert
 touches all three surfaces in a single thought. The chip in the chat bubble
 and the line on the chart are the same object observed from two angles —
 when the alert fires, both update in the same tick.
@@ -83,13 +83,13 @@ via `setMarkers`. Two layers, one moment.
 
 ## 4. Tech choices
 
-| | |
-|---|---|
-| Vite + React 18 + TypeScript | Fast HMR, typed front to back |
-| **Lightweight Charts** | What real trading sites use, canvas-fast, OSS |
-| **Zustand** | Single source of truth for alerts, fireQueue, chat. Per-selector subscriptions kept FireOverlay decoupled from ChartPanel without prop-drilling. Picked over Redux because the ceremony isn't earning anything at this size; over Jotai because alert state isn't atomized — it's one list and one queue. |
-| **Framer Motion** | Only used in `FireOverlay` and `SuggestionPanel`. The rest of the UI uses plain Tailwind transitions. |
-| **Tailwind** | Design tokens as classes, no CSS file sprawl. |
+|                              |                                                                                                                                                                                                                                                                                                           |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Vite + React 18 + TypeScript | Fast HMR, typed front to back                                                                                                                                                                                                                                                                             |
+| **Lightweight Charts**       | What real trading sites use, canvas-fast, OSS                                                                                                                                                                                                                                                             |
+| **Zustand**                  | Single source of truth for alerts, fireQueue, chat. Per-selector subscriptions kept FireOverlay decoupled from ChartPanel without prop-drilling. Picked over Redux because the ceremony isn't earning anything at this size; over Jotai because alert state isn't atomized — it's one list and one queue. |
+| **Framer Motion**            | Only used in `FireOverlay` and `SuggestionPanel`. The rest of the UI uses plain Tailwind transitions.                                                                                                                                                                                                     |
+| **Tailwind**                 | Design tokens as classes, no CSS file sprawl.                                                                                                                                                                                                                                                             |
 
 No AG Grid, no Plotly, no Redux. Wrong tools for this brief; would have been
 overengineering.
@@ -106,7 +106,7 @@ Restraint is a green flag in the brief. Specifics:
 - **Alert hygiene drawer.** A full slide-in panel with filters, group ops,
   snooze, stale detection. Cut. The chat is the alert manager; the chart is
   the alert manager. A third surface for managing alerts duplicates work.
-- **Vague-intent proposals.** *"Tell me anything interesting"* opening a
+- **Vague-intent proposals.** _"Tell me anything interesting"_ opening a
   three-card proposal flow. Nice in theory; in practice it's a parallel
   product I couldn't ship cleanly in scope.
 - **Streaming chat text with shimmer.** Cute. Adds nothing. The assistant
